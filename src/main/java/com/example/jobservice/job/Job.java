@@ -24,14 +24,17 @@ public class Job {
         this.companyId = companyId;
     }
 
-    public Job(){}
-    public Job(Long id, String title, String desc, int minSalary, int maxSalary, String location) {
+    public Job() {
+    }
+
+    public Job(Long id, String title, String desc, int minSalary, int maxSalary, String location, Long companyId) {
         this.id = id;
         this.title = title;
         this.desc = desc;
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+        this.companyId = companyId;
     }
 
     public Long getId() {
