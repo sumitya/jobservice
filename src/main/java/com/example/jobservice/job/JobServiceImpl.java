@@ -41,7 +41,7 @@ public class JobServiceImpl implements JobService {
         // RestTemplate is useful for interacting with external services/endpoints.
         //RestTemplate restTemplate = new RestTemplate();
         Company company =
-                restTemplate.getForObject("http://localhost:8083/companies/" + job.getCompanyId(),
+                restTemplate.getForObject("http://COMPANYSERVICE:8083/companies/" + job.getCompanyId(),
                         Company.class);
         dto.setCompany(company);
         return dto;
