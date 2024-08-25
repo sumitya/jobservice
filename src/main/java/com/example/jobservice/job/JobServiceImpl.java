@@ -15,6 +15,9 @@ public class JobServiceImpl implements JobService {
     @Autowired
     private JobRepo repo;
 
+    @Autowired
+    RestTemplate restTemplate;
+
     public Job getJobById(Long id) {
         Optional<Job> jobOptional = repo.getJobById(id);
         if (jobOptional.isPresent()) return jobOptional.get();
@@ -36,7 +39,7 @@ public class JobServiceImpl implements JobService {
         dto.setJob(job);
 
         // RestTemplate is useful for interacting with external services/endpoints.
-        RestTemplate restTemplate = new RestTemplate();
+        //RestTemplate restTemplate = new RestTemplate();
         Company company =
                 restTemplate.getForObject("http://localhost:8083/companies/" + job.getCompanyId(),
                         Company.class);
